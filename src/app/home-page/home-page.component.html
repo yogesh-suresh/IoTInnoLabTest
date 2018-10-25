@@ -1,0 +1,88 @@
+<div class="container-fluid">
+<div class="row">
+  <div class="col-4">
+      <h4>Location</h4>
+      <div class="custom-control custom-checkbox my-1 mr-sm-2">
+        <input type="checkbox" class="custom-control-input" id="customControlInline1" >
+        <label class="custom-control-label" for="customControlInline1">Africa</label>
+      </div>
+      <div class="custom-control custom-checkbox my-1 mr-sm-2">
+        <input type="checkbox" class="custom-control-input" id="customControlInline2">
+        <label class="custom-control-label" for="customControlInline2">Asia</label>
+      </div>
+      <div class="custom-control custom-checkbox my-1 mr-sm-2">
+        <input type="checkbox" class="custom-control-input" id="customControlInline3">
+        <label class="custom-control-label" for="customControlInline3">Australia</label>
+      </div>
+      <div class="custom-control custom-checkbox my-1 mr-sm-2">
+        <input type="checkbox" class="custom-control-input" id="customControlInline4">
+        <label class="custom-control-label" for="customControlInline4">Europe</label>
+      </div>
+      <div class="custom-control custom-checkbox my-1 mr-sm-2">
+        <input type="checkbox" class="custom-control-input" id="customControlInline5">
+        <label class="custom-control-label" for="customControlInline5">North America</label>
+      </div>
+      <div class="custom-control custom-checkbox my-1 mr-sm-2">
+        <input type="checkbox" class="custom-control-input" id="customControlInline6">
+        <label class="custom-control-label" for="customControlInline6">South America</label>
+      </div>
+       <br/>
+        <h4>Gender</h4>
+        <div class="">
+          <div class="custom-control custom-radio">
+            <input type="radio" id="customRadio1" name="customRadio" class="custom-control-input">
+            <label class="custom-control-label" for="customRadio1">Male</label>
+          </div>
+          <div class="custom-control custom-radio">
+            <input type="radio" id="customRadio2" name="customRadio" class="custom-control-input">
+            <label class="custom-control-label" for="customRadio2">Female</label>
+          </div>
+          <div class="custom-control custom-radio">
+            <input type="radio" id="customRadio2" name="customRadio" class="custom-control-input">
+            <label class="custom-control-label" for="customRadio2">Both</label>
+          </div>
+
+
+        </div>
+        <br/>
+        <h4>Skills</h4>
+        <div *ngFor="let user of users">
+
+        <button type="button" class="btn btn-outline-info" (click)="skill(user.skill)">{{user.skill}}</button>
+        </div>
+
+  </div>
+  <div class="col-8">
+  <div>
+    <ul class="collection">
+      <div *ngFor="let user of users">
+
+        <div *ngIf="!firstFlag">
+          <div *ngIf="user.skill == selSkill" class="collection-item avatar">
+            <img src="{{user.avatar}}" alt="" class="circle">
+            <span class="title">{{user.name}}</span>
+            <p>{{user.position}} at {{user.company}}  <br>
+            {{user.skill}}
+            </p>
+          </div>
+        </div>
+
+        <div *ngIf="firstFlag">
+          <div class="collection-item avatar">
+            <img src="{{user.avatar}}" alt="" class="circle">
+            <span class="title">{{user.name}}</span>
+            <p>{{user.position}} at {{user.company}}  <br>
+            {{user.skill}}
+            </p>
+          </div>
+        </div>
+
+      </div>
+    </ul>
+  </div>
+  </div>
+
+
+
+</div>
+</div>

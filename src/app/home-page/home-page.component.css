@@ -1,0 +1,173 @@
+.circle {
+  border-radius: 50%;
+}
+.collection {
+  margin: 0.5rem 0 1rem 0;
+  border: 1px solid #e0e0e0;
+  border-radius: 2px;
+  overflow: hidden;
+  position: relative;
+}
+
+.collection .collection-item {
+  background-color: #fff;
+  line-height: 1.5rem;
+  padding: 10px 20px;
+  margin: 0;
+  border-bottom: 1px solid #e0e0e0;
+}
+
+.collection .collection-item.avatar {
+  min-height: 84px;
+  padding-left: 72px;
+  position: relative;
+}
+
+.collection .collection-item.avatar:not(.circle-clipper) > .circle,
+.collection .collection-item.avatar :not(.circle-clipper) > .circle {
+  position: absolute;
+  width: 42px;
+  height: 42px;
+  overflow: hidden;
+  left: 15px;
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.collection .collection-item.avatar i.circle {
+  font-size: 18px;
+  line-height: 42px;
+  color: #fff;
+  background-color: #999;
+  text-align: center;
+}
+
+.collection .collection-item.avatar .title {
+  font-size: 16px;
+}
+
+.collection .collection-item.avatar p {
+  margin: 0;
+}
+
+.collection .collection-item.avatar .secondary-content {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+}
+
+.collection .collection-item:last-child {
+  border-bottom: none;
+}
+
+.collection .collection-item.active {
+  background-color: #26a69a;
+  color: #eafaf9;
+}
+
+.collection .collection-item.active .secondary-content {
+  color: #fff;
+}
+
+.collection a.collection-item {
+  display: block;
+  -webkit-transition: .25s;
+  transition: .25s;
+  color: #26a69a;
+}
+
+.collection a.collection-item:not(.active):hover {
+  background-color: #ddd;
+}
+
+.collection.with-header .collection-header {
+  background-color: #fff;
+  border-bottom: 1px solid #e0e0e0;
+  padding: 10px 20px;
+}
+
+.collection.with-header .collection-item {
+  padding-left: 30px;
+}
+
+.collection.with-header .collection-item.avatar {
+  padding-left: 72px;
+}
+
+.secondary-content {
+  float: right;
+  color: #26a69a;
+}
+
+.collapsible .collection {
+  margin: 0;
+  border: none;
+}
+
+
+.gap-patch {
+  position: absolute;
+  top: 0;
+  left: 45%;
+  width: 10%;
+  height: 100%;
+  overflow: hidden;
+  border-color: inherit;
+}
+
+.gap-patch .circle {
+  width: 1000%;
+  left: -450%;
+}
+
+.circle-clipper {
+  display: inline-block;
+  position: relative;
+  width: 50%;
+  height: 100%;
+  overflow: hidden;
+  border-color: inherit;
+}
+
+.circle-clipper .circle {
+  width: 200%;
+  height: 100%;
+  border-width: 3px;
+  /* STROKEWIDTH */
+  border-style: solid;
+  border-color: inherit;
+  border-bottom-color: transparent !important;
+  border-radius: 50%;
+  -webkit-animation: none;
+  animation: none;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+}
+
+.circle-clipper.left .circle {
+  left: 0;
+  border-right-color: transparent !important;
+  -webkit-transform: rotate(129deg);
+  transform: rotate(129deg);
+}
+
+.circle-clipper.right .circle {
+  left: -100%;
+  border-left-color: transparent !important;
+  -webkit-transform: rotate(-129deg);
+  transform: rotate(-129deg);
+}
+
+.active .circle-clipper.left .circle {
+  /* duration: ARCTIME */
+  -webkit-animation: left-spin 1333ms cubic-bezier(0.4, 0, 0.2, 1) infinite both;
+  animation: left-spin 1333ms cubic-bezier(0.4, 0, 0.2, 1) infinite both;
+}
+
+.active .circle-clipper.right .circle {
+  /* duration: ARCTIME */
+  -webkit-animation: right-spin 1333ms cubic-bezier(0.4, 0, 0.2, 1) infinite both;
+  animation: right-spin 1333ms cubic-bezier(0.4, 0, 0.2, 1) infinite both;
+}
